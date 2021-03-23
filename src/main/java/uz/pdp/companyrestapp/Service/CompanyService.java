@@ -75,9 +75,8 @@ public class CompanyService {
             }
             address.setStreet(companyDTO.getStreet());
             address.setHomeNumber(companyDTO.getHomeNumber());
-            Address editedAddress = addressRepository.save(address);
+            addressRepository.save(address);
 
-            updatedCompany.setAddress(editedAddress);
             companyRepository.save(updatedCompany);
             return new Result("Company updated", true);
         }
